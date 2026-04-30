@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Madheshwar C V - Full Stack Developer & Cloud Enthusiast">
+    <title>Madheshwar C V | Futuristic Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Particles -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Custom Cursor Glow -->
+    <div id="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="glass-nav">
+        <div class="nav-container">
+            <a href="#home" class="logo">M<span class="neon-text">.</span>CV</a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#certifications" class="nav-item">Certifications</a></li>
+                <li><a href="#education" class="nav-item">Education</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="greeting">HELLO, WORLD! I AM</h3>
+            <h1 class="name">MADHESHWAR C V</h1>
+            <h2 class="role">I am a <span id="typed-text" class="neon-text"></span></h2>
+            <p class="tagline">Building scalable web applications and cloud-powered solutions.</p>
+            
+            <div class="cta-container">
+                <a href="#projects" class="btn btn-neon">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="#" class="btn btn-outline">Download Resume</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/madheshwar-c-v-532065303" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/MADHESHWAR" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="mailto:madheshwarcv@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="glowing-card-profile">
+                <div class="profile-inner">
+                    <i class="fas fa-code astronaut-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title" data-aos="fade-right">About <span class="neon-text">Me</span></h2>
+        <div class="about-container glass-card" data-aos="fade-up">
+            <div class="about-content">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="about-text">
+                    Motivated and detail-oriented graduate with strong programming fundamentals, problem-solving skills, and knowledge in Cloud Computing and Web Development. Passionate about building scalable applications and continuously learning modern technologies.
+                </p>
+                <i class="fas fa-quote-right quote-icon right"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title" data-aos="fade-right">Technical <span class="neon-text">Skills</span></h2>
+        <div class="skills-grid">
+            <!-- Programming -->
+            <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fas fa-terminal neon-icon"></i> Programming</h3>
+                <ul class="skill-list">
+                    <li><i class="fab fa-java"></i> Java</li>
+                    <li><i class="fab fa-python"></i> Python</li>
+                    <li><i class="fas fa-c"></i> C</li>
+                </ul>
+            </div>
+            
+            <!-- Web Tech -->
+            <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-globe neon-icon"></i> Web Tech</h3>
+                <ul class="skill-list">
+                    <li><i class="fab fa-html5"></i> HTML5</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fab fa-js"></i> JavaScript</li>
+                </ul>
+            </div>
+
+            <!-- Backend -->
+            <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-server neon-icon"></i> Backend</h3>
+                <ul class="skill-list">
+                    <li><i class="fab fa-node-js"></i> Node.js</li>
+                    <li><i class="fas fa-code-branch"></i> Express.js</li>
+                </ul>
+            </div>
+
+            <!-- Database -->
+            <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="400">
+                <h3><i class="fas fa-database neon-icon"></i> Database</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-database"></i> PostgreSQL</li>
+                    <li><i class="fas fa-database"></i> MySQL</li>
+                </ul>
+            </div>
+
+            <!-- DevOps & Tools -->
+            <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="500">
+                <h3><i class="fas fa-cloud neon-icon"></i> DevOps & Tools</h3>
+                <ul class="skill-list">
+                    <li><i class="fab fa-aws"></i> AWS</li>
+                    <li><i class="fab fa-github"></i> GitHub</li>
+                    <li><i class="fab fa-jenkins"></i> Jenkins</li>
+                    <li><i class="fab fa-docker"></i> Docker</li>
+                    <li><i class="fas fa-cube"></i> Terraform</li>
+                    <li><i class="fas fa-code"></i> VS Code</li>
+                    <li><i class="fas fa-caret-up"></i> Vercel</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title" data-aos="fade-right">My <span class="neon-text">Projects</span></h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card glass-card" data-aos="flip-left" data-aos-duration="1000">
+                <div class="project-info">
+                    <h3 class="project-title">Student Management System</h3>
+                    <p class="project-desc">A full-stack application for managing student records with secure authentication and database integration.</p>
+                    <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>JWT</span><span>bcrypt</span>
+                    </div>
+                    <ul class="project-features">
+                        <li><i class="fas fa-check"></i> CRUD operations</li>
+                        <li><i class="fas fa-check"></i> REST APIs</li>
+                        <li><i class="fas fa-check"></i> JWT authentication</li>
+                        <li><i class="fas fa-check"></i> Secure password handling</li>
+                    </ul>
+                    <a href="https://github.com/MADHESHWAR/Student-Management-System.git" target="_blank" class="btn btn-outline btn-sm"><i class="fab fa-github"></i> View Source</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glass-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-info">
+                    <h3 class="project-title">CI/CD Pipeline Project</h3>
+                    <p class="project-desc">An automated build and deployment pipeline demonstrating modern DevOps practices.</p>
+                    <div class="project-tech">
+                        <span>Jenkins</span><span>Docker</span><span>Terraform</span>
+                    </div>
+                    <ul class="project-features">
+                        <li><i class="fas fa-check"></i> Automated CI/CD workflow</li>
+                        <li><i class="fas fa-check"></i> Docker containerization</li>
+                        <li><i class="fas fa-check"></i> Jenkins automation</li>
+                        <li><i class="fas fa-check"></i> Infra provisioning (Terraform)</li>
+                    </ul>
+                    <a href="https://github.com/MADHESHWAR/devops-mini-project.git" target="_blank" class="btn btn-outline btn-sm"><i class="fab fa-github"></i> View Source</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <h2 class="section-title" data-aos="fade-right">Licenses & <span class="neon-text">Certifications</span></h2>
+        <div class="cert-grid">
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-award cert-icon"></i>
+                <h3>AWS Cloud Practitioner Essentials</h3>
+            </div>
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-certificate cert-icon"></i>
+                <h3>Microsoft Azure Data Analytics</h3>
+            </div>
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-medal cert-icon"></i>
+                <h3>Prompt Engineering Masterclass</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2 class="section-title" data-aos="fade-right">My <span class="neon-text">Education</span></h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>Rathinam Technical Campus</h3>
+                    <h4 class="neon-text">B.Tech AI & Data Science</h4>
+                    <p class="timeline-date"><i class="far fa-calendar-alt"></i> 2023 – Present</p>
+                    <p class="score">CGPA: 8.66</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>St. Sebastian’s Higher Secondary School</h3>
+                    <h4 class="neon-text">Higher Secondary Education</h4>
+                    <p class="timeline-date"><i class="far fa-calendar-alt"></i> 2022 – 2023</p>
+                    <p class="score">Score: 92.5%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title" data-aos="fade-right">Get In <span class="neon-text">Touch</span></h2>
+        <div class="contact-container glass-card" data-aos="zoom-in">
+            <form id="contact-form" class="contact-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-neon btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-card">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/madheshwar-c-v-532065303" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/MADHESHWAR" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:madheshwarcv@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-divider"></div>
+            <p>Designed & Developed by <span class="neon-text">Madheshwar</span> &copy; 2026</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
