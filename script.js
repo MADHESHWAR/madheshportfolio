@@ -79,32 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* === Custom Glow Cursor Logic === */
-    const cursor = document.getElementById('cursor-glow');
     
-    // Only apply custom cursor on desktop
-    if (window.innerWidth > 768 && cursor) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        // Add glow effect when hovering over interactive elements
-        const interactives = document.querySelectorAll('a, button, .project-card, .cert-card, .skill-category');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursor.style.background = 'radial-gradient(circle, rgba(0, 210, 255, 0.5) 0%, rgba(0,0,0,0) 70%)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.background = 'radial-gradient(circle, rgba(188,19,254,0.4) 0%, rgba(0,0,0,0) 70%)';
-            });
-        });
-    } else if (cursor) {
-        // Hide cursor glow on mobile
-        cursor.style.display = 'none';
-    }
 
     /* === Custom HTML5 Canvas Particle System === */
     const canvas = document.getElementById('particleCanvas');
