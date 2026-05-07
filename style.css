@@ -68,19 +68,7 @@ body {
     pointer-events: none;
 }
 
-/* Custom Cursor */
-#cursor-glow {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle, rgba(188,19,254,0.4) 0%, rgba(0,0,0,0) 70%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: screen;
-    transition: transform 0.1s ease-out;
-}
+
 
 /* === Typography Utilities === */
 h1, h2, h3, h4 {
