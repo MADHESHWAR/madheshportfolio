@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typedTextElement = document.getElementById('typed-text');
     if (typedTextElement) {
         new Typed('#typed-text', {
-            strings: ['Full Stack Developer.', 'Cloud Enthusiast.', 'DevOps Practitioner.'],
+            strings: ['AI & Data Science Student.', 'Cloud Enthusiast.', 'DevOps Practitioner.', 'SAP Enthusiast'],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
