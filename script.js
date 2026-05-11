@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typedTextElement) {
         new Typed('#typed-text', {
             strings: ['AI & Data Science Student.', 'SAP Enthusiast.', 'DevOps Practitioner.', 'Cloud Enthusiast.'],
-            typeSpeed: 55,
-            backSpeed: 25,
+            typeSpeed: 50,
+            backSpeed: 30,
             backDelay: 2000,
             loop: true,
             cursorChar: '|'
