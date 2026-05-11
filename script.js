@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const typedTextElement = document.getElementById('typed-text');
     if (typedTextElement) {
         new Typed('#typed-text', {
-            strings: ['AI & Data Science Student.', 'SAP Enthusiast.', 'DevOps Practitioner.', 'Cloud Enthusiast.'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
+            strings: ['AI & Data Science Student.', 'SAP Enthusiast.', 'Cloud Enthusiast.', 'DevOps Practitioner.'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2500,
+            startDelay: 300,
             loop: true,
+            smartBackspace: false,
             cursorChar: '|'
         });
     }
@@ -79,32 +81,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* === Custom Glow Cursor Logic === */
-    const cursor = document.getElementById('cursor-glow');
-    
-    // Only apply custom cursor on desktop
-    if (window.innerWidth > 768 && cursor) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+    /* === Contact Form Submission === */
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        // Add glow effect when hovering over interactive elements
-        const interactives = document.querySelectorAll('a, button, .project-card, .cert-card, .skill-category');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursor.style.background = 'radial-gradient(circle, rgba(0, 210, 255, 0.5) 0%, rgba(0,0,0,0) 70%)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.background = 'radial-gradient(circle, rgba(188,19,254,0.4) 0%, rgba(0,0,0,0) 70%)';
-            });
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) return;
+
+            // Build mailto link and open it
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            window.location.href = `mailto:madheshwarcv@gmail.com?subject=${subject}&body=${body}`;
+
+            // Show success feedback
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            submitBtn.style.borderColor = '#00d2ff';
+            submitBtn.style.boxShadow = '0 0 10px rgba(0,210,255,0.4), inset 0 0 10px rgba(0,210,255,0.2)';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.borderColor = '';
+                submitBtn.style.boxShadow = '';
+                submitBtn.disabled = false;
+                contactForm.reset();
+            }, 3000);
         });
-    } else if (cursor) {
-        // Hide cursor glow on mobile
-        cursor.style.display = 'none';
     }
+    /* === Custom Glow Cursor (disabled — using normal cursor) === */
+    const cursor = document.getElementById('cursor-glow');
+    if (cursor) cursor.style.display = 'none';
 
     /* === Custom HTML5 Canvas Particle System === */
     const canvas = document.getElementById('particleCanvas');
@@ -173,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
                 let directionX = (Math.random() * 1) - 0.5; // Slow movement
                 let directionY = (Math.random() * 1) - 0.5;
-                
+
                 // Color array mixing violet and blue glow
                 let colors = ['rgba(188, 19, 254, 0.7)', 'rgba(0, 210, 255, 0.6)'];
                 let color = colors[Math.floor(Math.random() * colors.length)];
@@ -187,9 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let opacityValue = 1;
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
-                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
-                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
+                        ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+
                     if (distance < (canvas.width / 10) * (canvas.height / 10)) {
                         opacityValue = 1 - (distance / 20000);
                         ctx.strokeStyle = `rgba(188, 19, 254, ${opacityValue * 0.2})`;
